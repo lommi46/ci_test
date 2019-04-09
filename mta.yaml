@@ -15,6 +15,17 @@ modules:
     - name: uaa_ci_test_project
     - name: dest_ci_test_project
 
+
+ - name: JavaModule
+   type: java
+   path: java_app
+   parameters:
+      memory: 1024M
+   provides:
+    - name: JavaModule_api
+      properties:
+         url: ${default-url}
+
 resources:
  - name: uaa_ci_test_project
    parameters:
