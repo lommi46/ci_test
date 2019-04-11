@@ -16,13 +16,16 @@ modules:
     - name: dest_ci_test_project
 
 
- - name: JavaModule
+ 
+
+
+ - name: java_app
    type: java
    path: java_app
    parameters:
       memory: 1024M
    provides:
-    - name: JavaModule_api
+    - name: java_app_api
       properties:
          url: ${default-url}
 

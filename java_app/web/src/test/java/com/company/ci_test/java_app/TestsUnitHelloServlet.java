@@ -1,4 +1,4 @@
-package com.company.ci_test.JavaModule;
+package com.company.ci_test.java_app;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
@@ -8,7 +8,7 @@ import java.io.*;
 import org.junit.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import com.company.ci_test.JavaModule.HelloServlet;
+import com.company.ci_test.java_app.HelloServlet;
 
 /**
  * Unit tests for HelloServlet.

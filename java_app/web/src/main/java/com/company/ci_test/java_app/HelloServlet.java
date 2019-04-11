@@ -1,4 +1,4 @@
-package com.company.ci_test.JavaModule;
+package com.company.ci_test.java_app;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
-import com.company.ci_test.JavaModule.HelloUtil;
+import com.company.ci_test.java_app.HelloUtil;
 
 @WebServlet("/hello")
 public class HelloServlet extends HttpServlet {

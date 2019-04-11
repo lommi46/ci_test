@@ -1,11 +1,11 @@
-package com.company.ci_test.JavaModule;
+package com.company.ci_test.java_app;
 
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.*;
-import com.company.ci_test.JavaModule.HelloUtil;
+import com.company.ci_test.java_app.HelloUtil;
 
 /**
  * Unit tests for HelloUtil.

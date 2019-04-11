@@ -1,4 +1,4 @@
-package com.company.ci_test.JavaModule;
+package com.company.ci_test.java_app;
 
 public class HelloUtil {
 

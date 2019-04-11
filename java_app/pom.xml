@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.company.ci_test</groupId>
-	<artifactId>JavaModule</artifactId>
+	<artifactId>java_app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>com.company.ci_test:JavaModule</name>
+	<name>com.company.ci_test:java_app</name>
 	<prerequisites>
 		<maven>3.3.9</maven>
 	</prerequisites>

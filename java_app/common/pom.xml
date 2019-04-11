@@ -5,14 +5,14 @@
 
   <parent>
     <groupId>com.company.ci_test</groupId>
-    <artifactId>JavaModule</artifactId>
+    <artifactId>java_app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>JavaModule-common</artifactId>
+  <artifactId>java_app-common</artifactId>
   <packaging>jar</packaging>
-  <name>com.company.ci_test:JavaModule-common</name>
+  <name>com.company.ci_test:java_app-common</name>
 
   <dependencies>
     <!-- test dependencies -->

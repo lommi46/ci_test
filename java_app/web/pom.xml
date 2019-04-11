@@ -5,19 +5,19 @@
 
   <parent>
     <groupId>com.company.ci_test</groupId>
-    <artifactId>JavaModule</artifactId>
+    <artifactId>java_app</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <relativePath>..</relativePath>
   </parent>
 
-  <artifactId>JavaModule-web</artifactId>
+  <artifactId>java_app-web</artifactId>
   <packaging>war</packaging>
-  <name>com.company.ci_test:JavaModule-web</name>
+  <name>com.company.ci_test:java_app-web</name>
 
   <dependencies>
     <dependency>
       <groupId>com.company.ci_test</groupId>
-      <artifactId>JavaModule-common</artifactId>
+      <artifactId>java_app-common</artifactId>
       <version>0.0.1-SNAPSHOT</version>
     </dependency>
 
