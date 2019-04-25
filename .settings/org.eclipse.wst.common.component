@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ci_test">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/java_app/common/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/java_app/common/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/java_app/web/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/java_app/web/src/test/java"/>
+        <property name="context-root" value="ci_test"/>
+        <property name="java-output-path" value="/ci_test/bin"/>
+    </wb-module>
+</project-modules>
