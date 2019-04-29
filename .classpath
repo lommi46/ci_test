@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="java_app/common/src/test/java"/>
 	<classpathentry kind="src" path="java_app/web/src/main/java"/>
 	<classpathentry kind="src" path="java_app/web/src/test/java"/>
+	<classpathentry kind="src" path="java_module/src"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
