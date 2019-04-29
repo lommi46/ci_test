@@ -1,0 +1,5 @@
+npm ERR! code E404
+npm ERR! 404 Not Found: @sap/approuter@5.11.0
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     C:\Users\D074337\AppData\Roaming\npm-cache\_logs\2019-04-29T10_41_31_277Z-debug.log
