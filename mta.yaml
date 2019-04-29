@@ -29,6 +29,17 @@ modules:
       properties:
          url: ${default-url}
 
+
+ - name: java_module
+   type: java
+   path: java_module
+   parameters:
+      memory: 1024M
+   provides:
+    - name: java_module_api
+      properties:
+         url: ${default-url}
+
 resources:
  - name: uaa_ci_test_project
    parameters:
