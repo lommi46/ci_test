@@ -11,10 +11,6 @@ modules:
       memory: 256M
    build-parameters:
       builder: grunt
-   requires:
-    - name: uaa_ci_test_project
-    - name: dest_ci_test_project
-
 
  - name: java_module
    type: java
