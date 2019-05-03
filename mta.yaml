@@ -3,7 +3,7 @@ _schema-version: '2.1'
 version: 0.0.1
 
 modules:
- - name: ui5_app
+ - name: ui5app
    type: html5
    path: ui5_app
    parameters:
@@ -13,7 +13,7 @@ modules:
    build-parameters:
       builder: grunt
    
- - name: java_module
+ - name: javamodule
    type: java
    path: java_module
    parameters:
