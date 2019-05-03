@@ -9,9 +9,9 @@ modules:
    parameters:
       disk-quota: 256M
       memory: 256M
+      version: 0.0.1
    build-parameters:
       builder: grunt
-   version: 0.0.1
    
  - name: java_module
    type: java
@@ -22,4 +22,3 @@ modules:
     - name: java_module_api
       properties:
          url: ${default-url}
-   version: 0.0.1
