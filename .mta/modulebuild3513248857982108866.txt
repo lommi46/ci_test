@@ -30,7 +30,7 @@
  T E S T S
 -------------------------------------------------------
 Running test.java.com.company.ci_test.java_module.JunitTest
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 sec
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 sec
 
 Results :
 
@@ -46,11 +46,11 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO] Assembling webapp [java_module] in [C:\Users\D074337\git\ci_test\java_module\target\java_module-0.0.1-SNAPSHOT]
 [INFO] Processing war project
 [INFO] Copying webapp resources [C:\Users\D074337\git\ci_test\java_module\src\main\webapp]
-[INFO] Webapp assembled in [104 msecs]
+[INFO] Webapp assembled in [72 msecs]
 [INFO] Building war: C:\Users\D074337\git\ci_test\java_module\target\java_module-0.0.1-SNAPSHOT.war
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  8.168 s
-[INFO] Finished at: 2019-04-29T12:41:32+02:00
+[INFO] Total time:  6.045 s
+[INFO] Finished at: 2019-04-29T12:49:25+02:00
 [INFO] ------------------------------------------------------------------------

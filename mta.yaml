@@ -26,17 +26,3 @@ modules:
       properties:
          url: ${default-url}
 
-resources:
- - name: uaa_ci_test_project
-   parameters:
-      path: ./xs-security.json
-      service-plan: application
-      service: xsuaa
-   type: org.cloudfoundry.managed-service
-
- - name: dest_ci_test_project
-   parameters:
-      service-plan: lite
-      service: destination
-   type: org.cloudfoundry.managed-service
-

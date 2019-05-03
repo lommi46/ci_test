@@ -11,17 +11,17 @@
 [main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.proc.ModuleBuildDependency$$impl5 for bean interface com.sap.di.ext.mta.proc.ModuleBuildDependency
 [main] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project
 [main] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: created 4 verification tasks
-[pool-1-thread-1] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol resource[uaa_ci_test_project]
-[pool-1-thread-3] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol module[ui5_app]
 [pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol resource[dest_ci_test_project]
+[pool-1-thread-1] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol resource[uaa_ci_test_project]
 [pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: finished symbol resource[dest_ci_test_project]
 [pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol module[java_module]
+[pool-1-thread-3] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol module[ui5_app]
 [pool-1-thread-1] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: finished symbol resource[uaa_ci_test_project]
 [pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': command timeout is 300 seconds
 [pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'java_module': command timeout is 300 seconds
-[pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': command output file is C:\Users\D074337\git\ci_test\.mta\modulebuild6178873261231996414.txt
+[pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': command output file is C:\Users\D074337\git\ci_test\.mta\modulebuild3112104390835303243.txt
 [pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': invoking command [npm.cmd, install]
-[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'java_module': command output file is C:\Users\D074337\git\ci_test\.mta\modulebuild2495390518891582827.txt
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'java_module': command output file is C:\Users\D074337\git\ci_test\.mta\modulebuild3513248857982108866.txt
 [pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'java_module': invoking command [mvn.cmd, -B, package]
 [pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': command exit value 1
 [pool-1-thread-3] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: finished symbol module[ui5_app]
