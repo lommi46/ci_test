@@ -3,20 +3,17 @@ _schema-version: '2.1'
 version: 0.0.1
 
 modules:
- - name: ui5_app
+ - name: ui5app
    type: html5
    path: ui5_app
    parameters:
       disk-quota: 256M
       memory: 256M
+      version: 0.0.1
    build-parameters:
       builder: grunt
-   requires:
-    - name: uaa_ci_test_project
-    - name: dest_ci_test_project
-
-
- - name: java_module
+       
+ - name: javamodule
    type: java
    path: java_module
    parameters:
