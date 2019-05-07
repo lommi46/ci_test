@@ -1,0 +1,13 @@
+@Library('ui5') _
+
+pipeline {
+	agent any
+	
+	stages {
+		stage('Build and deploy the ui5 application') {
+			steps {
+				buildAndDeployUI5App deployOnPremise: true, deployCloud: true
+			}
+		}
+	}
+}
