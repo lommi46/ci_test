@@ -17,7 +17,7 @@ pipeline {
 		
 	stage ('Build') {
 		steps {
-			echo 'Test'
+			echo 'Das ist eine Testausgabe'
 			}
 		}	
 	}
