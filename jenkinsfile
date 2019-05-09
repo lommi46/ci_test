@@ -4,10 +4,10 @@ pipeline {
 		maven '/usr/share/maven'
 		jdk 'JDK 8'
 	
-	docker {
+	//docker {
 	    
-	    image 'node:6-alpine'
-	    args '-p 3000:3000'}
+	//    image 'node:6-alpine'
+	//    args '-p 3000:3000'}
 	}
 
 	stages {
