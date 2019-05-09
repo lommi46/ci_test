@@ -1,3 +1,4 @@
+@Library('ui5') _
 pipeline {
 	agent any
 	tools {
