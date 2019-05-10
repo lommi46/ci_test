@@ -1,13 +1,28 @@
-pipeline{
+pipeline {
 	agent any
+	tools {
+		maven '/usr/share/maven'
+		jdk 'JDK 8'
+	
 	stages {
-		stage ('Build'){
-		steps{
-			sh'''
-			$ su -s /bin/bash jenkins
-			java -jar mta.jar --build-target NEO --mtar mymtar.mtar build
-			'''
+		stage('initialize') {
+			steps {
+				sh '''
+					echo "PATH = ${PATH}"
+					echo "M2_HOME = ${M2_HOME}"
+				'''
+				}
 			}
+		
+		
+	stage ('Build') {
+		steps {
+			sh '''
+			cd /var/lib/jenkins/workspace/pipeline_test/java_module
+			mvn -Dmaven.test.failure.ignore=true install
+				'''
+				}
+			}	
 		}
 	}
 }
