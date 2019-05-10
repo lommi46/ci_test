@@ -19,7 +19,7 @@ pipeline {
 				sh '''
 					cd /var/lib/jenkins/workspace/pipeline_test/java_module
 					mvn -Dmaven.test.failure.ignore=true install
-					echo "whoami"
+					whoami
 					'''
 			}	
 		}
