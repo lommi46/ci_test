@@ -3,7 +3,7 @@ pipeline {
 	tools {
 		maven '/usr/share/maven'
 		jdk 'JDK 8'
-	
+	}
 	stages {
 		stage('initialize') {
 			steps {
@@ -21,7 +21,6 @@ pipeline {
 					cd /var/lib/jenkins/workspace/pipeline_test/java_module
 					mvn -Dmaven.test.failure.ignore=true install
 					'''
-				}
 			}	
 		}
 	}
