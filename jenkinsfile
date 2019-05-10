@@ -4,9 +4,9 @@ pipeline{
 		stage ('Build'){
 		steps{
 			sh'''
-			java -jar mta.jar --build-target NEO --mtar mymtar.mtar build
+			java -jar /SAP/mta.jar --build-target=NEO --mtar=mymtar.mtar build
 			'''
 			}
 		}
-	}
+}
 }
