@@ -15,9 +15,13 @@ pipeline{
 			}
 		}
 		stage ('Deploy'){
+		steps{
+		    
+		
+
 		sh' /SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account $AWS_ACCESS_KEY_ID + 'trial' --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user "$AWS_ACCESS_KEY_ID" --password $AWS_SECRET_ACCESS_KEY -y'
 		    }
 		}
-
+}
 		}
 
