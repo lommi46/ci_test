@@ -20,7 +20,7 @@ pipeline{
 		    
 		
 
-		sh '/SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account $AWS_ACCESS_KEY_ID_CP --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user $AWS_ACCESS_KEY_ID --password $AWS_SECRET_ACCESS_KEY -y'
+		sh '/SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account $AWS_ACCESS_KEY_ID_CP_USR --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user $AWS_ACCESS_KEY_ID_USR --password $AWS_SECRET_ACCESS_KEY_PSW -y'
 		    }
 		}
 }
