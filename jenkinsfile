@@ -1,5 +1,11 @@
 pipeline{
 	agent any
+	
+	environment{
+	   AWS_ACCESS_KEY_ID     = credentials('Jenkins-user-CI-id')
+        AWS_SECRET_ACCESS_KEY = credentials('Jenkins-user-CI-key')
+	}
+
 	stages {
 		stage ('Build'){
 		steps{
@@ -8,5 +14,10 @@ pipeline{
 			'''
 			}
 		}
-}
-}
+		stage ('Deploy'){
+		sh' /SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account AWS_ACCESS_KEY_ID + 'trial' --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user "$AWS_ACCESS_KEY_ID" --password AWS_SECRET_ACCESS_KEY -y'
+		    }
+		}
+
+		}
+
