@@ -1,0 +1,58 @@
+[main] INFO com.sap.di.ext.mta.proc.DescriptorProcessorImpl - MTA manifest processing on 3 threads
+[main] INFO com.sap.di.ext.mta.cli.CliExecutor - arguments: [--build-target, NEO, --mtar, ci_test.mtar, build]
+[main] INFO com.sap.di.ext.mta.cli.CliExecutor - Archive path is C:\Users\D074337\git\ci_test\ci_test.mtar
+[main] DEBUG com.sap.di.ext.mta.cli.CliBuildExecutor - Starting MTA build
+[main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.dto.DesignDescriptor$$impl0 for bean interface com.sap.di.ext.mta.dto.DesignDescriptor
+[main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.dto.DesignModule$$impl1 for bean interface com.sap.di.ext.mta.dto.DesignModule
+[main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.dto.RequiredSymbol$$impl2 for bean interface com.sap.di.ext.mta.dto.RequiredSymbol
+[main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.dto.ProvidedSymbol$$impl3 for bean interface com.sap.di.ext.mta.dto.ProvidedSymbol
+[main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.dto.Resource$$impl4 for bean interface com.sap.di.ext.mta.dto.Resource
+[main] INFO com.sap.di.ext.mta.proc.ProcessingRun - Processing MTA ci_test_project
+[main] INFO com.sap.di.beans.DynamicBeans - Created implementation class com.sap.di.ext.mta.proc.ModuleBuildDependency$$impl5 for bean interface com.sap.di.ext.mta.proc.ModuleBuildDependency
+[main] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project
+[main] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: created 4 verification tasks
+[pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol resource[dest_ci_test_project]
+[pool-1-thread-1] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol resource[uaa_ci_test_project]
+[pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: finished symbol resource[dest_ci_test_project]
+[pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol module[java_module]
+[pool-1-thread-3] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: started symbol module[ui5_app]
+[pool-1-thread-1] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: finished symbol resource[uaa_ci_test_project]
+[pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': command timeout is 300 seconds
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'java_module': command timeout is 300 seconds
+[pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': command output file is C:\Users\D074337\git\ci_test\.mta\modulebuild3112104390835303243.txt
+[pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': invoking command [npm.cmd, install]
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'java_module': command output file is C:\Users\D074337\git\ci_test\.mta\modulebuild3513248857982108866.txt
+[pool-1-thread-2] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'java_module': invoking command [mvn.cmd, -B, package]
+[pool-1-thread-3] DEBUG com.sap.di.ext.mta.cli.CommandHelper - Module 'ui5_app': command exit value 1
+[pool-1-thread-3] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: finished symbol module[ui5_app]
+[pool-1-thread-2] INFO com.sap.di.ext.mta.proc.ProcessingRun - Verifying MTA ci_test_project: finished symbol module[java_module]
+[main] ERROR com.sap.di.ext.mta.cli.CliExecutor - Failed to build module "ui5_app". Command execution failed with exit code 1
+com.sap.di.ext.mta.proc.MtaProcessingException: Failed to build module "ui5_app". Command execution failed with exit code 1
+	at com.sap.di.ext.mta.proc.ProcessingRun.consumeNextVerificationResult(ProcessingRun.java:291)
+	at com.sap.di.ext.mta.proc.ProcessingRun.verifySymbols(ProcessingRun.java:248)
+	at com.sap.di.ext.mta.proc.ProcessingRun.execute(ProcessingRun.java:97)
+	at com.sap.di.ext.mta.proc.DescriptorProcessorImpl.process(DescriptorProcessorImpl.java:68)
+	at com.sap.di.ext.mta.cli.CliBuildExecutor.build(CliBuildExecutor.java:100)
+	at com.sap.di.ext.mta.cli.CliExecutor.run(CliExecutor.java:170)
+	at com.sap.di.ext.mta.cli.CliExecutor.run(CliExecutor.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.sap.di.ext.mta.cli.MtaMain.doMain(MtaMain.java:95)
+	at com.sap.di.ext.mta.cli.MtaMain.main(MtaMain.java:36)
+Caused by: com.sap.di.ext.mta.cli.CliException: Failed to build module "ui5_app". Command execution failed with exit code 1
+	at com.sap.di.ext.mta.cli.CliProcessingHelper.verifyModule(CliProcessingHelper.java:56)
+	at com.sap.di.ext.mta.cli.CliBuildExecutor$ProcHelperAnchor.verifyModule(CliBuildExecutor.java:156)
+	at com.sap.di.ext.mta.proc.ModuleHandler$1.call(ModuleHandler.java:189)
+	at com.sap.di.ext.mta.proc.ProcessingRun$VerificationTask.lambda$new$4(ProcessingRun.java:320)
+	at org.eclipse.che.commons.lang.concurrent.CopyThreadLocalCallable.call(CopyThreadLocalCallable.java:30)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: com.sap.di.ext.mta.cli.CliException: Command execution failed with exit code 1
+	at com.sap.di.ext.mta.cli.CommandHelper.executeBuild(CommandHelper.java:103)
+	at com.sap.di.ext.mta.cli.builder.GruntBuilder.build(GruntBuilder.java:56)
+	at com.sap.di.ext.mta.cli.CliProcessingHelper.verifyModule(CliProcessingHelper.java:54)
+	... 8 more

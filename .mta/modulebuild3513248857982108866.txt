@@ -1,0 +1,56 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< com.company.ci_test:java_module >-------------------
+[INFO] Building com.company.ci_test:java_module 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ war ]---------------------------------
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:prepare-agent (default-prepare-agent) @ java_module ---
+[INFO] argLine set to -javaagent:C:\\Users\\D074337\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.7.9\\org.jacoco.agent-0.7.9-runtime.jar=destfile=C:\\Users\\D074337\\git\\ci_test\\java_module\\target\\jacoco.exec
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ java_module ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\D074337\git\ci_test\java_module\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:compile (default-compile) @ java_module ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\D074337\git\ci_test\java_module\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ java_module ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\D074337\git\ci_test\java_module\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.6.1:testCompile (default-testCompile) @ java_module ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to C:\Users\D074337\git\ci_test\java_module\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ java_module ---
+[INFO] Surefire report directory: C:\Users\D074337\git\ci_test\java_module\target\surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running test.java.com.company.ci_test.java_module.JunitTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.162 sec
+
+Results :
+
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- jacoco-maven-plugin:0.7.9:report (jacoco-report) @ java_module ---
+[INFO] Loading execution data file C:\Users\D074337\git\ci_test\java_module\target\jacoco.exec
+[INFO] Analyzed bundle 'com.company.ci_test:java_module' with 1 classes
+[INFO] 
+[INFO] --- maven-war-plugin:3.0.0:war (default-war) @ java_module ---
+[INFO] Packaging webapp
+[INFO] Assembling webapp [java_module] in [C:\Users\D074337\git\ci_test\java_module\target\java_module-0.0.1-SNAPSHOT]
+[INFO] Processing war project
+[INFO] Copying webapp resources [C:\Users\D074337\git\ci_test\java_module\src\main\webapp]
+[INFO] Webapp assembled in [72 msecs]
+[INFO] Building war: C:\Users\D074337\git\ci_test\java_module\target\java_module-0.0.1-SNAPSHOT.war
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.045 s
+[INFO] Finished at: 2019-04-29T12:49:25+02:00
+[INFO] ------------------------------------------------------------------------
