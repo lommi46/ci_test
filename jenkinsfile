@@ -3,6 +3,7 @@ pipeline{
 	
 	environment{
 	   AWS_ACCESS_KEY_ID     = credentials('Jenkins-user-CI')
+	   AWS_ACCERS_KEY_CP		 = credentials('Jenkins-CPuser')
       }
 
 	stages {
@@ -18,7 +19,7 @@ pipeline{
 		    
 		
 
-		sh '/SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account $AWS_ACCESS_KEY_ID_USR +'trial' --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user $AWS_ACCESS_KEY_ID_USR --password $AWS_ACCESS_KEY_ID_PSW -y'
+		sh '/SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account $AWS_ACCESS_KEY_CP_USR --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user $AWS_ACCESS_KEY_ID_USR --password $AWS_ACCESS_KEY_ID_PSW -y'
 		    }
 		}
 }
