@@ -3,7 +3,7 @@ pipeline{
 	
 	environment{
 	   AWS_ACCESS_KEY_ID     = credentials('Jenkins-user-CI')
-	   AWS_ACCES_KEY_CP		 = credentials('Jenkins-user-CP')
+	   AWS_ACCESS_KEY_CP		 = credentials('Jenkins-user-CP')
       }
 
 	stages {
