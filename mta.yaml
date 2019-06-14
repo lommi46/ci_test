@@ -9,7 +9,7 @@ modules:
    parameters:
       disk-quota: 256M
       memory: 256M
-      version: 0.0.2
+      version: 0.0.3
    build-parameters:
       builder: grunt
        
