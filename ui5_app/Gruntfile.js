@@ -1,9 +1,6 @@
 module.exports = function (grunt) {
 	"use strict";
-	exec: {
-		  echo_something: 'echo "ui5 build --all  "'
-		}
-	grunt.loadNpmTasks('grunt-exec');
+	grunt.loadNpmTasks('ui5 build --all');
 	grunt.config.merge({ compatVersion: "edge" });
 	grunt.registerTask("default", ["lint"]);
 	grunt.loadNpmTasks("@sap/grunt-sapui5-bestpractice-test");
