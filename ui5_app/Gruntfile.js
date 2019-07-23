@@ -1,5 +1,8 @@
 module.exports = function (grunt) {
 	"use strict";
+	exec: {
+		  echo_something: 'echo "ui5 build --all  "'
+		}
 	grunt.loadNpmTasks('grunt-exec');
 	grunt.config.merge({ compatVersion: "edge" });
 	grunt.registerTask("default", ["lint"]);
@@ -15,6 +18,3 @@ module.exports = function (grunt) {
 	});
 };
 
-exec: {
-	  echo_something: 'echo "ui5 build --all  "'
-	}
