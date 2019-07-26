@@ -1,3 +1,6 @@
+exec: {
+  echo_something: 'echo "This is something"'
+}
 module.exports = function (grunt) {
 	"use strict";
 	grunt.loadNpmTasks('grunt-exec');
