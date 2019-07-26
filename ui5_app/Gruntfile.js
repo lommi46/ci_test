@@ -1,5 +1,5 @@
 exec: {
-  echo_something: 'echo "This is something"'
+  echo_something: 'echo "ui5 build --all "'
 }
 module.exports = function (grunt) {
 	"use strict";
