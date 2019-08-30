@@ -1,25 +1,3 @@
-pipeline{
-	agent any
-	
-	environment{
-	   AWS_ACCESS_KEY_ID     = credentials('Jenkins-user-CI')
-	   AWS_ACCESS_KEY_CP		 = credentials('Jenkins-user-CP')
-      }
+@Library('piper-lib-os') _
 
-	stages {
-		stage ('Build'){
-		steps{
-			sh'java -jar /SAP/mta.jar --build-target=NEO --mtar=mymtar.mtar build' 
-			}
-		}
-		stage ('Deploy'){
-		steps{
-		    
-		
-
-		sh '/SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account $AWS_ACCESS_KEY_CP_USR --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user $AWS_ACCESS_KEY_ID_USR --password $AWS_ACCESS_KEY_ID_PSW -y'
-		    }
-		}
-}
-		}
-
+fioriOnCloudPlatformPipeline script:this

@@ -1,0 +1,10 @@
+steps:
+  mtaBuild:
+    buildTarget: 'NEO'
+    mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
+  neoDeploy:
+    neoHome: '/sdk/tools/'
+    neo:
+      credentialsId: 'NEO_DEPLOY'
+      account: 'd07443trial'
+      host: 'hanatrial.ondemand.com'
