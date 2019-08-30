@@ -1,9 +1,7 @@
-exec: {
-  echo_something: 'echo "test "'
-}
+
 module.exports = function (grunt) {
 	"use strict";
-	grunt.loadNpmTasks('grunt-exec');
+	grunt.loadNpmTasks('grunt');
 	grunt.config.merge({ compatVersion: "edge" });
 	grunt.registerTask("default", ["lint"]);
 	grunt.loadNpmTasks("@sap/grunt-sapui5-bestpractice-test");
