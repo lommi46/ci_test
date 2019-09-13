@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
 	"use strict";
-	grunt.loadNpmTasks('grunt-uglify');
+	grunt.loadNpmTasks('grunt-*');
 	grunt.config.merge({ compatVersion: "edge" });
 	grunt.registerTask("default", ["lint"]);
 	grunt.loadNpmTasks("@sap/grunt-sapui5-bestpractice-test");
