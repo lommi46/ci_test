@@ -3,6 +3,16 @@ _schema-version: '2.1'
 version: 0.0.1
 
 modules:
+ - name: javamodule
+   type: java
+   path: java_module
+   parameters:
+      memory: 1024M
+   provides:
+    - name: java_module_api
+      properties:
+         url: ${default-url}
+         
  - name: ui5app
    type: html5
    path: ui5_app
@@ -13,13 +23,5 @@ modules:
    build-parameters:
       builder: grunt
        
- - name: javamodule
-   type: java
-   path: java_module
-   parameters:
-      memory: 1024M
-   provides:
-    - name: java_module_api
-      properties:
-         url: ${default-url}
+ 
 
