@@ -21,7 +21,4 @@ modules:
       memory: 256M
       version: 0.0.3
    build-parameters:
-      builder: npm
-       
- 
-
+      builder: grunt
