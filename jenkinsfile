@@ -2,3 +2,6 @@
 
 fioriOnCloudPlatformPipeline script:this
 
+node {
+  mvn this, 'clean package'
+}
