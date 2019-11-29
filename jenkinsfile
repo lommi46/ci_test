@@ -1,7 +1,4 @@
 @Library('piper-lib-os') _
-fioriOnCloudPlatformPipeline script:this
-
-
 node {
     echo 'Staging Components...'
     
@@ -17,7 +14,13 @@ node {
     stage ('Delete') {
         deleteComponents nexusInstanceId: 'localnexus'
     } 
+
 }
+fioriOnCloudPlatformPipeline script:this
+
+
+
+
 
 
 
