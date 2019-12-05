@@ -1,6 +1,4 @@
 @Library('piper-lib-os') _
-
-fioriOnCloudPlatformPipeline script:this
 node {
     echo 'Staging Components...'
     
@@ -11,7 +9,7 @@ node {
 
 
 }
-
+fioriOnCloudPlatformPipeline script:this
 
 
 
