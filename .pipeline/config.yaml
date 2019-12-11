@@ -1,6 +1,6 @@
 steps:
   mtaBuild:
-    buildTarget: 'NEO'
+    buildTarget: 'CF'
     mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
   neoDeploy:
     neoHome: '/sdk/tools/'
