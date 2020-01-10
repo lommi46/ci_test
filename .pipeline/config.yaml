@@ -3,7 +3,7 @@ steps:
     buildTarget: 'CF'
     mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
    cloudFoundryDeploy:
-    deployTool: 'cf_native'
+    deployTool: 'mtaDeployPlugin'
     cloudFoundry:
       org: 'testOrg'
       space: 'testSpace'

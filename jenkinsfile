@@ -4,7 +4,7 @@ cloudFoundryDeploy(
     script: script,
     deployType: 'blue-green',
     cloudFoundry: [apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com', appName:'CF_App', credentialsId: 'NEO_DEPLOY', manifest: 'cfManifest', org: 'cfOrg', space: 'cfSpace'],
-    deployTool: 'cf_native'
+    deployTool: 'mtaDeployPlugin'
 )
 node {
     stage ('Publishing') {
