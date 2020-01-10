@@ -7,4 +7,4 @@ steps:
     cloudFoundry:
       org: 'testOrg'
       space: 'testSpace'
-      credentialsId: 'NEO_DELPOY'
+      credentialsId: 'NEO_DEPLOY'
