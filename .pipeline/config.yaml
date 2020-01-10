@@ -4,6 +4,7 @@ steps:
     mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
    cloudFoundryDeploy:
     deployTool: 'mtaDeployPlugin'
+    deployType: 'standard'
     cloudFoundry:
       org: 'testOrg'
       space: 'testSpace'
