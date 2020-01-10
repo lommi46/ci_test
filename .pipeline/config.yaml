@@ -7,6 +7,6 @@ steps:
     deployType: 'standard'
     cloudFoundry:
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-      org: 'D074337trial_trial'
+      org: 'D074337trial'
       space: 'dev'
       credentialsId: 'NEO_DEPLOY'
