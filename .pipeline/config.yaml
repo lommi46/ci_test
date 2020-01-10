@@ -2,9 +2,9 @@ steps:
   mtaBuild:
     buildTarget: 'CF'
     mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
-  neoDeploy:
-    neoHome: '/sdk/tools/'
-    neo:
-      credentialsId: 'NEO_DEPLOY'
-      account: 'd074337trial'
-      host: 'hanatrial.ondemand.com'
+   cloudFoundryDeploy:
+    deployTool: 'cf_native'
+    cloudFoundry:
+      org: 'testOrg'
+      space: 'testSpace'
+      credentialsId: 'NEO_DELPOY'
