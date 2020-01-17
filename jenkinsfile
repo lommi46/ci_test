@@ -7,13 +7,13 @@ node(){
       checkout scm
       setupCommonPipelineEnvironment script:this
   }
-  
-  stage('Deploy')   {
-      cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin'
-  }
 
   stage('Build')   {
       mtaBuild script:this
+  }
+
+  stage('Deploy')   {
+      cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin'
   }
     
   stage ('Publishing') {
