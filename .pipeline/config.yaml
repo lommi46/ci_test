@@ -6,5 +6,5 @@ steps:
     cloudFoundry:
       credentialsId: 'CF'
       apiEndpoint: '<CF Endpoint>'
-      org: 'D074337trial_trial'
+      org: '8faa3f73-ec35-46ae-98df-14cb9e08dd32'
       space: 'dev'
