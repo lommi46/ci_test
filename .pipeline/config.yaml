@@ -3,10 +3,8 @@ steps:
     buildTarget: 'CF'
     mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
    cloudFoundryDeploy:
-    deployTool: 'mtaDeployPlugin'
-    deployType: 'standard'
     cloudFoundry:
-      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-      org: 'D074337trial'
+      credentialsId: 'CF'
+      apiEndpoint: '<CF Endpoint>'
+      org: 'D074337trial_trial'
       space: 'dev'
-      credentialsId: 'NEO_DEPLOY'
