@@ -15,7 +15,7 @@ node {
 	   		 cloudFoundryDeploy(
     	script: this,
     	deployType: 'blue-green',
-    	cloudFoundry: [apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com', appName:'cfAppName', credentialsId: 'NEO_DEPLOY', manifest: 'cfManifest', org: 'D074337trial_trial', space: 'dev'],
+    	cloudFoundry: [apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com', appName:'cfAppName', credentialsId: 'NEO_DEPLOY', manifest: 'manifest.json', org: 'D074337trial_trial', space: 'dev'],
     	deployTool: 'cf_native'
 			)
    		}
