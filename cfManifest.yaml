@@ -1,4 +1,6 @@
 ---
 applications:
 - name: ui5_app
+  path: ./ui5_app
 - name: java_module
+  path: ./java_module
