@@ -1,0 +1,4 @@
+---
+applications:
+- name: ui5_app
+- name: java_module
