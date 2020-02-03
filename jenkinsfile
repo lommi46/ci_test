@@ -1,13 +1,7 @@
 @Library('piper-lib-os') _
 
 node {
-	stage('build MTA'){
-	     mtaBuild script:this, buildTarget: 'CF'
-	}
 	
-    stage ('publish') {
-         nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/CI_test/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.000']]]
-    }
     
     stage('deploy') {
 	   		 cloudFoundryDeploy(
@@ -17,6 +11,13 @@ node {
     	deployTool: 'cf_native'
 			)
    		}
+   		stage('build MTA'){
+	     mtaBuild script:this, buildTarget: 'CF'
+	}
+	
+    stage ('publish') {
+         nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/CI_test/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.000']]]
+    }
 }
 
 
