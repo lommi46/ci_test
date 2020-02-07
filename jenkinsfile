@@ -4,7 +4,7 @@
 node {
 	
     
-    stage('deploy') {
+    stage('Deploy') {
 	   		 cloudFoundryDeploy(
     	script: this,
     	deployType: 'blue-green',
