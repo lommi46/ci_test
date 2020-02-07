@@ -1,16 +1,20 @@
-@Library('piper-lib-os') _
+@Library('piper-library-os') _
 
-fioriOnCloudPlatformPipeline script:this
-// node {
- //   stage('Deploy') {
-	//   		 cloudFoundryDeploy(
-   // 	script: this,
-   // 	deployType: 'blue-green',
-   // 	cloudFoundry: [apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com', appName:'CF_APP', credentialsId: 'NEO_DEPLOY', manifest: 'cfManifest.yaml', org: 'D074337trial_trial', space: 'dev'],
-   // 	deployTool: 'cf_native'
-	//		)
-   	//	} 
-   // stage ('publish') {
+node(){
+  stage('Prepare')   {
+      deleteDir()
+      checkout scm
+      setupCommonPipelineEnvironment script:this
+  }
+
+  stage('Build')   {
+      mtaBuild script:this
+  }
+
+  stage('Deploy')   {
+      cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin'
+  }
+}
+ // stage ('publish') {
    //     nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/CI_test/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.000']]]
    // }
-//}
