@@ -4,7 +4,7 @@ steps:
     mtaJarLocation: '/opt/sap/mta/lib/mta.jar'
   cloudFoundryDeploy:
     cloudFoundry:
-      credentialsId: 'NEO_DEPLOY'
+      credentialsId: 'CF'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       org: 'D074337trial_trial'
       space: 'dev'
