@@ -1,8 +1,12 @@
 @Library('piper-lib-os') _
 
+String pipelineVersion = "master"
+
 node(){
   stage('Prepare')   {
       deleteDir()
+      sh "git clone --depth 1 https://github.com/SAP/cloud-s4-sdk-pipeline.git -b ${pipelineVersion} pipelines"
+	  load './pipelines/s4sdk-pipeline.groovy'
       checkout scm
       setupCommonPipelineEnvironment script:this
   }
