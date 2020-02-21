@@ -10,7 +10,7 @@ node(){
   }
 
   stage('Build')   {
-      mtaBuild script:this
+      mtaBuild script:this      
   }
 
   stage('Deploy')   {
