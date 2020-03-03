@@ -17,8 +17,6 @@ modules:
    type: html5
    path: ui5_app
    parameters:
-      disk-quota: 256M
-      memory: 256M
-      version: 0.0.4
+      version: 0.0.1
    build-parameters:
       builder: npm
