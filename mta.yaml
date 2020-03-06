@@ -1,32 +1,25 @@
 ID: ci_test_project
-_schema-version: '2.1'
+_schema-version: "2.1"
 version: 0.0.1
 
 modules:
- - name: ui5app
-   type: html5
-   path: ui5_app
-   parameters:
+  - name: ui5app
+    type: html5
+    path: ui5_app
+    parameters:
       disk-quota: 256M
       memory: 256M
       version: 0.0.1
-   build-parameters:
+    build-parameters:
       builder: grunt
-<<<<<<< HEAD
-   
-=======
-       
->>>>>>> refs/remotes/origin/develop
- - name: javamodule
-   type: java
-   path: java_module
-   parameters:
+      grunt-opts: 
+        -build-result: ./target 
+  - name: javamodule
+    type: java
+    path: java_module
+    parameters:
       memory: 1024M
-   provides:
-    - name: java_module_api
-      properties:
-         url: ${default-url}
-<<<<<<< HEAD
-=======
-
->>>>>>> refs/remotes/origin/develop
+    provides:
+      - name: java_module_api
+        properties:
+          url: ${default-url}
