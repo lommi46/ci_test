@@ -19,4 +19,5 @@ modules:
    parameters:
       version: 0.0.1
    build-parameters:
-      builder: npm
+      builder: grunt
+      build-result: dist
