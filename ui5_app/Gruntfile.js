@@ -1,20 +1,14 @@
 module.exports = function (grunt) {
 
-    grunt.loadNpmTasks('grunt-run');
+    grunt.loadNpmTasks('grunt-exec');
 
     grunt.initConfig({
-        run: {
-            options: {
-                // ...
-            },
-            ui5_build: {
-                cmd: 'npm',
-                args: [
-                    'build'
-                ]
-            }
+        exec: {
+          build_ui5: {
+            command: 'npm run build'
+          }
         }
     });
 
-    grunt.registerTask('default', ['run:ui5_build']);
+    grunt.registerTask('default', ['exec:build_ui5']);
 };
