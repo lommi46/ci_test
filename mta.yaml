@@ -15,9 +15,7 @@ modules:
          
  - name: ui5app
    type: html5
-   path: ui5_app
-   parameters:
-      version: 0.0.1
+   path: ui5_app      
    build-parameters:
       builder: evo
       build-result: dist
