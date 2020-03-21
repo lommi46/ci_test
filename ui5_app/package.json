@@ -3,21 +3,14 @@
   "version": "0.0.1",
   "description": "",
   "devDependencies": {
-    "@ui5/cli": "^1.7.0",
-    "@sap/ui5-builder-webide-extension": "^1.0.9",
-    "lodash": "^4.17.15"
+    "@sap/grunt-sapui5-bestpractice-build": "1.4.2",
+    "@sap/grunt-sapui5-bestpractice-test": "2.0.1"
   },
   "dependencies": {
     "@sap/approuter": "6.8.0"
   },
   "scripts": {
-    "init": "",
-    "build": "ui5 build --include-task=generateManifestBundle generateCachebusterInfo",
-    "start": "node node_modules/@sap/approuter/approuter.js"
-  },
-  "ui5": {
-    "dependencies": [
-      "@sap/ui5-builder-webide-extension"
-    ]
+    "start": "node node_modules/@sap/approuter/approuter.js",
+    "test": "grunt unit_and_integration_tests"
   }
 }

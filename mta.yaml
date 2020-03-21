@@ -11,11 +11,22 @@ modules:
    provides:
     - name: java_module_api
       properties:
-         url: ${default-url}
-         
+         url: ${default-url}         
  - name: ui5app
    type: html5
-   path: ui5_app      
+   path: ui5_app
+   parameters:
+      disk-quota: 512M
+      memory: 256M
    build-parameters:
-      builder: evo
-      build-result: dist
+      builder: grunt
+   requires:
+    - name: uaa_ci_test_project
+
+resources:
+ - name: uaa_ci_test_project
+   parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+   type: org.cloudfoundry.managed-service       
