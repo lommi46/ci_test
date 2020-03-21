@@ -17,7 +17,7 @@ modules:
    type: html5
    path: ui5_app
    parameters:
-      version: 0.0.2
+      version: 0.0.1
    build-parameters:
-      builder: grunt
+      builder: evo
       build-result: dist

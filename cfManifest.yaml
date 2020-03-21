@@ -2,5 +2,7 @@
 applications:
 - name: ui5_app
   path: ./ui5_app
+  buildpack: staticfile_buildpack
 - name: java_module
   path: ./java_module
+  buildpack: sap_java_buildpack
