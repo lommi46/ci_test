@@ -19,7 +19,7 @@ modules:
       disk-quota: 512M
       memory: 256M
    build-parameters:
-      builder: grunt
+      builder: evo
    requires:
     - name: uaa_ci_test_project
 

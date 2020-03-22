@@ -11,6 +11,8 @@
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
-    "test": "grunt unit_and_integration_tests"
+    "test": "grunt unit_and_integration_tests",
+    "init": "",
+    "build": "grunt"
   }
 }
