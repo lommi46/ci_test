@@ -10,7 +10,7 @@ node(){
     	env.PATH = "${tool 'M3'}/bin:${env.PATH}"
 
        configFileProvider([configFile(fileId: '1bb30f98-47ec-4073-a7b1-d914af4f5499', variable: 'MAVEN_SETTINGS')]){                                                                                   
-        sh 'mvn -s $MAVEN_SETTINGS/java_module clean package'
+        sh 'mvn -s $MAVEN_SETTINGS clean package'
     	}      
   }
 
