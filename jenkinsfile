@@ -20,7 +20,7 @@ node(){
   }
 
   stage('Build')   {
-      mtaBuild script:this, globalSettingsFile: '1bb30f98-47ec-4073-a7b1-d914af4f5499'     
+      mtaBuild script:this, globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml' 
   }
 
   stage('Deploy')   {
