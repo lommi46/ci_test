@@ -2,14 +2,14 @@
   <mirrors>
     <mirror>
       <!--This sends everything else to /public -->
-      <id>nexus</id>
+      <id>localnexus</id>
       <mirrorOf>*</mirrorOf>
       <url>http://nexus:8081/repository/Maven-Proxy-test</url>
     </mirror>
   </mirrors>
   <servers>
 	<server>
-		<id>nexus</id>
+		<id>localnexus</id>
 		<username>admin</username>
 		<password>t0pspeed</password>
 	</server>
@@ -39,6 +39,6 @@
   </profiles>
   <activeProfiles>
     <!--make the profile active all the time -->
-    <activeProfile>nexus</activeProfile>
+    <activeProfile>localnexus</activeProfile>
   </activeProfiles>
 </settings>
