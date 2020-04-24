@@ -4,7 +4,7 @@
       <!--This sends everything else to /public -->
       <id>localnexus</id>
       <mirrorOf>*</mirrorOf>
-      <url>http://nexus:8081/repository/Maven-Proxy-test</url>
+      <url>http://nexus:8081/repository/maven-central</url>
     </mirror>
   </mirrors>
   <servers>
