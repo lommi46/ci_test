@@ -7,13 +7,6 @@
       <url>http://nexus:8081/repository/maven-central</url>
     </mirror>
   </mirrors>
-  <servers>
-	<server>
-		<id>localnexus</id>
-		<username>admin</username>
-		<password>t0pspeed</password>
-	</server>
-  </servers>
   <profiles>
     <profile>
       <id>localnexus</id>
