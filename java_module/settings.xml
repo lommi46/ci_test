@@ -7,6 +7,11 @@
       <url>http://cx-nexus:8081/repository/mvn-proxy</url>
     </mirror>
   </mirrors>
+  <servers>
+	<server>
+		<id>localnexus</id>
+	</server>
+  </servers>
   <profiles>
     <profile>
       <id>localnexus</id>
