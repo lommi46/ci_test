@@ -9,7 +9,6 @@
   </mirrors>
   <servers>
 	<server>
-		<id>localnexus</id>
 	</server>
   </servers>
   <profiles>
