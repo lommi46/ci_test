@@ -4,7 +4,7 @@
       <!--This sends everything else to /public -->
       <id>localnexus</id>
       <mirrorOf>*</mirrorOf>
-      <url>http://cx-nexus:8081/repository/mvn-proxy</url>
+      <url>http://172.22.0.4:8081/repository/mvn-proxy</url>
     </mirror>
   </mirrors>
   <servers>
