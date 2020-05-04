@@ -2,7 +2,7 @@
   <mirrors>
     <mirror>
       <!--This sends everything else to /public -->
-      <id>localnexus</id>
+      <id>cx-nexus</id>
       <mirrorOf>*</mirrorOf>
       <url>http://172.22.0.4:8081/repository/mvn-proxy</url>
     </mirror>
@@ -13,7 +13,7 @@
   </servers>
   <profiles>
     <profile>
-      <id>localnexus</id>
+      <id>cx-nexus</id>
       <!--Enable snapshots for the built in central repo to direct -->
       <!--all requests to nexus via the mirror -->
       <repositories>
@@ -36,6 +36,6 @@
   </profiles>
   <activeProfiles>
     <!--make the profile active all the time -->
-    <activeProfile>localnexus</activeProfile>
+    <activeProfile>cx-nexus</activeProfile>
   </activeProfiles>
 </settings>

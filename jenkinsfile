@@ -10,7 +10,7 @@ node(){
   }
 
   stage('Build')   {
-      mtaBuild script:this //, globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml' 
+      mtaBuild script:this , globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml' 
   }
 
   stage('Deploy')   {
