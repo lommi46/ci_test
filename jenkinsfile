@@ -10,7 +10,7 @@ node(){
   }
 
   stage('Build')   {
-      mtaBuild script:this , globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml',globalSettingsFile: '/var/jenkins_home/workspace/CF_test/ui5_app/.npmrc'  
+      mtaBuild script:this ,defaultNpmRegistry: '/var/jenkins_home/workspace/CF_test/ui5_app/.npmrc' //,globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml'
   }
 
   stage('Deploy')   {
