@@ -10,7 +10,7 @@ node(){
   }
 
   stage('Build')   {
-      mtaBuild script:this ,defaultNpmRegistry: 'http://localhost:8081/repository/npm-proxy/' //,globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml'
+      mtaBuild script:this ,defaultNpmRegistry: 'http://cx-nexus:8081/repository/npm-proxy/' //,globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml'
   }
 
   stage('Deploy')   {
