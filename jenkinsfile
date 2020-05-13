@@ -6,6 +6,10 @@ node(){
       deleteDir()
       checkout scm
       setupCommonPipelineEnvironment script:this
+      configFileProvider([configFile('859f9499-cd55-4426-8664-cbc259cabd16')]){
+          //some block
+      }
+
        
   }
 
