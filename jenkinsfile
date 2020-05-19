@@ -14,7 +14,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
+                mtaBuild script: this, mtaBuildTool: 'cloudMbt', dockerOptions: ['--network=cx-network']
             }
         }
     }
