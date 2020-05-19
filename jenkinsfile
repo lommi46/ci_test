@@ -1,4 +1,6 @@
-@Library('piper-lib-os') _
+// @Library('piper-lib-os') _
+
+final def jenkinsLibVersion = 'test-mtabuild-go'
 
 pipeline {
 
@@ -9,6 +11,7 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
+                library "piper-lib-os@${jenkinsLibVersion}"
                 setupCommonPipelineEnvironment script: this
             }
         }
