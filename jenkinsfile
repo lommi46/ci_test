@@ -1,16 +1,21 @@
 @Library('piper-lib-os') _
 
+pipeline {
 
-node(){
-  stage('Prepare')   {
-      deleteDir()
-      checkout scm
-      setupCommonPipelineEnvironment script:this
-  }
+    agent any
 
-  stage('Build')   {
-      withEnv(['M2_HOME=/opt/maven/apache-maven-3.6.3']) {
-      mtaBuild script:this
-             }
-  }
+    stages {
+        stage("prepare") {
+            steps {
+                deleteDir()
+                checkout scm
+                setupCommonPipelineEnvironment script: this
+            }
+        }
+        stage('build') {
+            steps {
+                mtaBuild script: this
+            }
+        }
+    }
 }
