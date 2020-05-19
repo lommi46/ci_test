@@ -1,6 +1,8 @@
 steps:
   mtaBuild:
     buildTarget: 'CF'
+    dockerOptions:
+      - "--network=cx-network"
   cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'CF_Credential'
