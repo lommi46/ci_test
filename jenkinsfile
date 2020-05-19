@@ -18,7 +18,7 @@ pipeline {
         stage('build') {
             steps {
                 withEnv(["REPOSITORY_UNDER_TEST=SAP/jenkins-library", "LIBRARY_VERSION_UNDER_TEST=conditionUpdate"]){
-                    mtaBuild script: this, mtaBuildTool: 'cloudMbt'
+                    mtaBuild script: this
                 }
             }
         }
