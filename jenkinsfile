@@ -1,6 +1,6 @@
 // @Library('piper-lib-os') _
 
-final def jenkinsLibVersion = 'test-mtabuild-go'
+final def jenkinsLibVersion = 'conditionUpdate'
 
 pipeline {
 
