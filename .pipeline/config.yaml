@@ -7,4 +7,3 @@ steps:
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       org: 'd074337trial'
       space: 'dev'
-      manifest: 'cfManifest.yaml'

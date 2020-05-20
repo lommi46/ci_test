@@ -1,27 +1,21 @@
 @Library('piper-lib-os') _
 
+pipeline {
 
-node(){
-  stage('Prepare')   {
-      deleteDir()
-      checkout scm
-      setupCommonPipelineEnvironment script:this
-      configFileProvider([configFile('859f9499-cd55-4426-8664-cbc259cabd16')]){
-          //some block
-      }
+    agent any
 
-       
-  }
-
-  stage('Build')   {
-      mtaBuild script:this ,defaultNpmRegistry: 'http://cx-nexus:8081/repository/npm-proxy/' //,globalSettingsFile: '/var/jenkins_home/workspace/CF_test/java_module/settings.xml'
-  }
-
-  stage('Deploy')   {
-      cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
-  }
-  
-  //stage ('publish') {
-  //   nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/CF_test/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '2.001']]]
-  //}
- }
+    stages {
+        stage("prepare") {
+            steps {
+                deleteDir()
+                checkout scm
+                setupCommonPipelineEnvironment script: this
+            }
+        }
+        stage('build') {
+            steps {
+                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
+            }
+        }
+    }
+}
