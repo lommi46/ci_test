@@ -1,12 +1,9 @@
 steps:
   mtaBuild:
     buildTarget: 'CF'
-    dockerOptions:
-      - "--network=cx-network"
   cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'CF_Credential'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       org: 'd074337trial'
       space: 'dev'
-      manifest: 'cfManifest.yaml'
