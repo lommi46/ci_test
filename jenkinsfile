@@ -1,31 +1,25 @@
-@Library('piper-lib-os') _
+pipeline{
+	agent any
+	
+	environment{
+	   AWS_ACCESS_KEY_ID     = credentials('Jenkins-user-CI')
+	   AWS_ACCESS_KEY_CP		 = credentials('Jenkins-user-CP')
+      }
 
-pipeline {
-
-    agent any
-
-    stages {
-        stage("prepare") {
-            steps {
-                deleteDir()
-                checkout scm
-                setupCommonPipelineEnvironment script: this
-            }
-        }
-        stage('build') {
-            steps {
-                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
-            }
-        }
-        stage('deploy'){
-        	steps{
-    			cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
+	stages {
+		stage ('Build'){
+		steps{
+			sh'java -jar /SAP/mta.jar --build-target=NEO --mtar=mymtar.mtar build' 
 			}
-        }
-        stage('Nexus deploy'){
-           	steps{
-        	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/CF_test/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.000']]]
-        	}
 		}
-    }
+		stage ('Deploy'){
+		steps{
+		    
+		
+
+		sh '/SAP/sdk/tools/neo.sh deploy-mta --host hanatrial.ondemand.com --account $AWS_ACCESS_KEY_CP_USR --source /var/lib/jenkins/workspace/MultiTargetApplication/mymtar.mtar --user $AWS_ACCESS_KEY_ID_USR --password $AWS_ACCESS_KEY_ID_PSW -y'
+		    }
+		}
 }
+		}
+

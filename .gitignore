@@ -17,6 +17,3 @@ APIExternalProducer.js
 /bin/
 
 /mta_archives/
-
-node_modules/
-dist/
