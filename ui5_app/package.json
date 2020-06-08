@@ -3,14 +3,16 @@
   "version": "0.0.1",
   "description": "",
   "devDependencies": {
-    "@sap/grunt-sapui5-bestpractice-build": "1.3.65",
-    "@sap/grunt-sapui5-bestpractice-test": "2.0.0"
+    "@sap/grunt-sapui5-bestpractice-build": "1.4.2",
+    "@sap/grunt-sapui5-bestpractice-test": "2.0.1"
   },
   "dependencies": {
-    "@sap/approuter": "5.11.0"
+    "@sap/approuter": "6.8.0"
   },
   "scripts": {
     "start": "node node_modules/@sap/approuter/approuter.js",
-    "test": "grunt unit_and_integration_tests"
+    "test": "grunt unit_and_integration_tests",
+    "init": "",
+    "build": "grunt"
   }
 }
