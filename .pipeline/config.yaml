@@ -5,5 +5,5 @@ steps:
     cloudFoundry:
       credentialsId: 'CF_Credential'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-      org: 'd074337trial'
+      org: '20cb8864trial'
       space: 'dev'
