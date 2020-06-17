@@ -1,7 +1,5 @@
 @Library('piper-lib-os') _
 
-def branch = $GIT_BRANCH
-
 pipeline {
 
     agent any
@@ -13,6 +11,7 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
+                echo "$env.GIT_BRANCH"
                 
    					}
           	     }
@@ -25,7 +24,7 @@ pipeline {
         stage('Nexus deploy'){
         	when{
         	    expression{
-        	        branch == 'origin/master'
+        	        $env.GIT_BRANCH == 'origin/master'
         	    }
 
         	}
