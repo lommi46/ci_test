@@ -11,6 +11,7 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                	echo "$JOB_NAME"
+               	echo "$BRANCH_NAME"
             }
                    }
         stage('build') {
@@ -22,7 +23,7 @@ pipeline {
         stage('Nexus deploy'){
         	when{
         	    expression{
-        	        env.BRANCH_NAME == 'master'
+        	        $BRANCH_NAME == 'master'
         	    }
 
         	}
@@ -36,7 +37,7 @@ pipeline {
         	when{
         	    expression{  
         	    
-        	        env.BRANCH_NAME == 'Cf_develop'
+        	        $BRANCH_NAME == 'Cf_develop'
         	    }
 
         	}
