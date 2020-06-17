@@ -17,11 +17,24 @@ pipeline {
                 mtaBuild script: this, mtaBuildTool: 'cloudMbt'
             }
         }
-        stage('deploy'){
-        
+    
+        stage('Nexus deploy'){
         	when{
         	    expression{
         	        env.BRANCH_NAME == 'master'
+        	    }
+
+        	}
+
+           	steps{           	
+        	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/${env.JOB_NAME}/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.${env.BUILD_NUMBER}']]]
+        	}
+		}
+		    stage('deploy'){
+        
+        	when{
+        	    expression{
+        	        env.BRANCH_NAME == 'Cf_develop'
         	    }
 
         	}
@@ -29,17 +42,5 @@ pipeline {
     			cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
 			}
         }
-        stage('Nexus deploy'){
-        	when{
-        	    expression{
-        	        BRANCH_NAME == 'master'
-        	    }
-
-        	}
-
-           	steps{           	
-        	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/ContinousDelivery_Develop/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.000']]]
-        	}
-		}
     }
 }
