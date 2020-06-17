@@ -11,10 +11,8 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
-               	echo "$BRANCH_NAME"
-               	
-               	
-            }
+               	echo "${BRANCH_NAME}" 
+               	     }
                    }
         stage('build') {
             steps {
