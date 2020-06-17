@@ -11,7 +11,7 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
-                echo "$GIT_BRANCH"
+                def branch = $GIT_BRANCH
    					}
           	     }
          stage('build') {
@@ -23,7 +23,7 @@ pipeline {
         stage('Nexus deploy'){
         	when{
         	    expression{
-        	        $GIT_BRANCH == 'origin/master'
+        	        branch == 'origin/master'
         	    }
 
         	}
