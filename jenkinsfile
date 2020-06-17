@@ -10,6 +10,7 @@ pipeline {
                 deleteDir()
                 checkout scm
                 setupCommonPipelineEnvironment script: this
+                System.out.println(env.Branch_Name)
             }
                    }
         stage('build') {
@@ -33,7 +34,8 @@ pipeline {
 		    stage('deploy'){
         
         	when{
-        	    expression{
+        	    expression{  
+        	    
         	        env.BRANCH_NAME == 'Cf_develop'
         	    }
 
