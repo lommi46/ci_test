@@ -10,7 +10,8 @@ pipeline {
                 deleteDir()
                 checkout scm
                 setupCommonPipelineEnvironment script: this
-                echo "$env.Branch_Name"
+                echo $JOB_NAME  
+				echo "$JOB_NAME"
             }
                    }
         stage('build') {
