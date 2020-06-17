@@ -11,7 +11,7 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
-               	def branch = env.BRANCH_NAME
+            //   	def branch = env.BRANCH_NAME
                	sh 'echo $BRANCH_NAME'
                	     }
                    }
