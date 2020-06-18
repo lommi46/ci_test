@@ -1,6 +1,6 @@
 @Library('piper-lib-os') _
 
-  def branch = $GIT_BRANCH
+  
 
 pipeline {
 
@@ -13,6 +13,7 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
+                def branch = $env.GIT_BRANCH
                 echo "$env.GIT_BRANCH"
                 echo "$branch"
               
