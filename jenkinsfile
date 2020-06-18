@@ -1,5 +1,7 @@
 @Library('piper-lib-os') _
 
+  def branch = $GIT_BRANCH
+
 pipeline {
 
     agent any
@@ -12,6 +14,8 @@ pipeline {
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
                 echo "$env.GIT_BRANCH"
+                echo "$branch"
+              
                 
    					}
           	     }
