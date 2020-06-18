@@ -16,8 +16,7 @@ pipeline {
                    def branch = "$env.GIT_BRANCH"
                }           
                 echo "$JOB_NAME"
-                echo "$env.GIT_BRANCH"
-                echo "${branch}"
+                echo "$branch"
 			
               
                 
