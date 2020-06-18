@@ -14,10 +14,10 @@ pipeline {
                 
                 script{
                    def BRANCH = "$env.GIT_BRANCH"
-                   sh "$BRANCH"
+                   //sh "$BRANCH"
                }           
-             //   echo "$JOB_NAME"
-             //   echo "$BRANCH"
+             	  echo "$JOB_NAME"
+             	  echo "$BRANCH"
 			
               
                 
