@@ -4,15 +4,17 @@
 pipeline {
 
     agent any
-	  environment{
-               def branch = "$env.GIT_BRANCH"
-			    }
+    
     stages {
         stage("prepare") {
             steps {
                 deleteDir()
                 checkout scm
                 setupCommonPipelineEnvironment script: this
+                script{
+                    def branch = "$env.GIT_BRANCH"
+                }
+
                 echo "$JOB_NAME"
                 echo "$env.GIT_BRANCH"
                 echo "${branch}"
