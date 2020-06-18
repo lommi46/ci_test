@@ -1,5 +1,5 @@
 @Library('piper-lib-os') _
-def branch = "$env.GIT_BRANCH"
+
 
 pipeline {
 
@@ -11,6 +11,7 @@ pipeline {
                 deleteDir()
                 checkout scm
                 setupCommonPipelineEnvironment script: this
+                def branch = "$env.GIT_BRANCH"
                 echo "$JOB_NAME"
                 echo "$env.GIT_BRANCH"
                 echo "${branch}"
