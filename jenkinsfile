@@ -13,7 +13,7 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
-                def branch = $env.GIT_BRANCH
+                def branch = "$env.GIT_BRANCH"
                 echo "$env.GIT_BRANCH"
                 echo "$branch"
               
@@ -22,6 +22,7 @@ pipeline {
           	     }
          stage('build') {
             steps {
+            echo "$branch"
                 mtaBuild script: this, mtaBuildTool: 'cloudMbt'
             }
         }
