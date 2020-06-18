@@ -13,10 +13,11 @@ pipeline {
                 setupCommonPipelineEnvironment script: this
                 
                 script{
-                   def branch = "$env.GIT_BRANCH"
+                   def BRANCH = "$env.GIT_BRANCH"
+                   sh " echo $BRANCH "
                }           
                 echo "$JOB_NAME"
-                echo "$branch"
+                echo "$BRANCH"
 			
               
                 
@@ -24,7 +25,7 @@ pipeline {
           	     }
          stage('build') {
             steps {
-            echo "$branch"
+            echo "$BRANCH"
                 mtaBuild script: this, mtaBuildTool: 'cloudMbt'
             }
         }
