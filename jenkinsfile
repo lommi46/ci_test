@@ -1,6 +1,5 @@
 @Library('piper-lib-os') _
-
-  def branch = "$env.GIT_BRANCH"
+def branch = "$env.GIT_BRANCH"
 
 pipeline {
 
@@ -14,7 +13,8 @@ pipeline {
                 setupCommonPipelineEnvironment script: this
                 echo "$JOB_NAME"
                 echo "$env.GIT_BRANCH"
-                echo "$branch"
+                echo "${branch}"
+
               
                 
    					}
@@ -29,7 +29,7 @@ pipeline {
         stage('Nexus deploy'){
         	when{
         	    expression{
-        	        $env.GIT_BRANCH == 'origin/master'
+        	        branch == 'origin/master'
         	    }
 
         	}
@@ -43,7 +43,7 @@ pipeline {
         	when{
         	    expression{  
         	    
-        	        $GIT_BRANCH == 'origin/Cf_develop'
+        	        branch == 'origin/Cf_develop'
         	    }
 
         	}
