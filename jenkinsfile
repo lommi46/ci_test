@@ -1,6 +1,6 @@
 @Library('piper-lib-os') _
 
-def Branch
+def Branch = ""
 
 pipeline {
 
