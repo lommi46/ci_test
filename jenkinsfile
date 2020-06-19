@@ -1,5 +1,6 @@
 @Library('piper-lib-os') _
 
+def Branch
 
 pipeline {
 
@@ -12,33 +13,28 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 
-                script{
-                   def BRANCH = "$env.GIT_BRANCH"
-                   //sh "$BRANCH"
-               }           
+                BRANCH = "$env.GIT_BRANCH"
+                         
              	  echo "$JOB_NAME"
-             	  echo "$BRANCH"
-			
-              
-                
-   					}
+             	  echo "$BRANCH"      
+            					}
           	     }
          stage('build') {
             steps {
-            echo "$BRANCH"
-                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
+               mtaBuild script: this, mtaBuildTool: 'cloudMbt'
             }
         }
     
         stage('Nexus deploy'){
         	when{
         	    expression{
-        	        branch == 'origin/master'
+        	        $env.GIT_BRANCH == 'origin/master'
         	    }
 
         	}
 
-           	steps{           	
+           	steps{
+           	// BUILD_NUMBER && JOB_NAME im statement           	
         	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/$JOB_NAME/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.$BUILD_NUMBER']]]
         	}
 		}
@@ -47,7 +43,7 @@ pipeline {
         	when{
         	    expression{  
         	    
-        	        branch == 'origin/Cf_develop'
+        	        BRANCH == 'origin/Cf_develop'
         	    }
 
         	}
