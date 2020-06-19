@@ -13,7 +13,7 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 
-                BRANCH = "$env.GIT_BRANCH"
+                BRANCH = $env.GIT_BRANCH
                          
              	  echo "$JOB_NAME"
              	  echo "$BRANCH"      
