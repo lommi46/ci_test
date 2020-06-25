@@ -13,11 +13,11 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 
-                scmVar = checkout scm
+                scmVar = "$GIT_BRANCH"
                 
                          
              	  echo "$JOB_NAME"
-             	  echo scmVar.GIT_BRANCH      
+             	  echo scmVar     
             					}
           	     }
          stage('build') {
