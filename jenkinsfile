@@ -14,10 +14,9 @@ pipeline {
                 setupCommonPipelineEnvironment script: this
                 
                 branch = $GIT_BRANCH
-                
-                         
+                                        
              	  echo "$JOB_NAME"
-             	  echo scmVar     
+             	  echo branch     
             					}
           	     }
          stage('build') {
