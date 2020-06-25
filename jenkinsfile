@@ -1,6 +1,6 @@
 @Library('piper-lib-os') _
 
-def Branch = ""
+def scvmVar = ""
 
 pipeline {
 
@@ -13,10 +13,11 @@ pipeline {
                 checkout scm
                 setupCommonPipelineEnvironment script: this
                 
-                BRANCH = "$env.GIT_BRANCH"
+                scmVar = checkout scm
+                
                          
              	  echo "$JOB_NAME"
-             	  echo "$BRANCH"      
+             	  echo scmVar.GIT_BRANCH      
             					}
           	     }
          stage('build') {
