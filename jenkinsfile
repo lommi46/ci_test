@@ -12,7 +12,7 @@ pipeline {
                 deleteDir()
                 checkout scm
                 setupCommonPipelineEnvironment script: this
-                echo $GIT_BRANCH
+                echo "$GIT_BRANCH"
                 branch = $GIT_BRANCH
                                         
              	  echo "$JOB_NAME"
