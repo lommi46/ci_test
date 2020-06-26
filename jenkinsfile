@@ -1,11 +1,12 @@
+import groovy.transform.Field
 @Library('piper-lib-os') _
 
- 
+	@Field branch = '' 
 
 pipeline {
 
     agent any
-	@Field branch = ''
+
     stages {
         stage("prepare") {
             steps {
