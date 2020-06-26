@@ -5,7 +5,7 @@
 pipeline {
 
     agent any
-	def branch
+	 branch = ""
     stages {
         stage("prepare") {
             steps {
