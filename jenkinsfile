@@ -1,11 +1,11 @@
 @Library('piper-lib-os') _
 
-def branch 
+ 
 
 pipeline {
 
     agent any
-
+	def branch
     stages {
         stage("prepare") {
             steps {
