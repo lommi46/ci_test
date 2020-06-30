@@ -34,8 +34,10 @@ pipeline {
         }
     
         stage('Nexus deploy'){
-        	
-        	echo "/var/jenkins_home/workspace/${env.JOB_NAME}/ci_test_project.mtar"
+        	steps {
+        	    echo "/var/jenkins_home/workspace/${env.JOB_NAME}/ci_test_project.mtar"
+        	}
+       	
 
            	steps{
            	// BUILD_NUMBER && JOB_NAME im statement           	
