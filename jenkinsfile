@@ -13,8 +13,8 @@ pipeline {
                 deleteDir()
                 checkout scm
                 setupCommonPipelineEnvironment script: this
-                echo "$GIT_BRANCH"
-                branch = "test"
+                echo "Build_NUMBER = ${env.BUILD_NUMBER}"
+				sh 'echo BUILD_NUMBER = $BUILD_NUMBER'
                                         
              	  echo "$JOB_NAME"
              	  echo branch     
