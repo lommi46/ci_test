@@ -22,7 +22,7 @@ pipeline {
          stage('build') {
          	when{
          	    expression {
-         	        ${env.GIT_BRANCH} == "origin/CF_develop"
+         	        env.GIT_BRANCH != "origin/CF_develop"
          	    }
 
          	}
