@@ -28,14 +28,14 @@ pipeline {
         stage('Nexus deploy'){
         	when{
         	    expression{
-        	        $env.GIT_BRANCH == 'origin/master'
+        	        ${env.GIT_BRANCH} == 'origin/master'
         	    }
 
         	}
 
            	steps{
            	// BUILD_NUMBER && JOB_NAME im statement           	
-        	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/$JOB_NAME/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.$BUILD_NUMBER']]]
+        	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/${env.JOB_NAME}/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.${env.BUILD_NUMBER}']]]
         	}
 		}
 		    stage('deploy'){
@@ -43,7 +43,7 @@ pipeline {
         	when{
         	    expression{  
         	    
-        	        BRANCH == 'origin/Cf_develop'
+        	         ${env.GIT_BRANCH} == 'origin/Cf_develop'
         	    }
 
         	}
