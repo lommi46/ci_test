@@ -20,6 +20,13 @@ pipeline {
             					}
           	     }
          stage('build') {
+         	when{
+         	    expression {
+         	        env.GIT_BRANCH == "origin/CF_develpo"
+         	    }
+
+         	}
+
             steps {
             	echo "${env.GIT_BRANCH}"          
                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
