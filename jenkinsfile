@@ -38,7 +38,7 @@ pipeline {
            	 echo "${env.JOB_NAME}"
            	 echo "/var/jenkins_home/workspace/" + env.JOB_NAME +"@2/ci_test_project.mtar"
                       	// BUILD_NUMBER && JOB_NAME im statement           	
-        	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/'+ env.JOB_NAME +'@2/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.${env.BUILD_NUMBER}']]]
+        	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/'+ env.JOB_NAME +'@2/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.' + env.BUILD_NUMBER]]]
         	}
 		}
 		stage('deploy'){
