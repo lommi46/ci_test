@@ -21,17 +21,13 @@ pipeline {
           	     }
          stage('build') {
             steps {
+            	echo "${env.GIT_BRANCH}"          
                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
             }
         }
     
         stage('Nexus deploy'){
-        	when{
-        	    expression{
-        	        ${env.GIT_BRANCH} == 'origin/master'
-        	    }
-
-        	}
+        	
 
            	steps{
            	// BUILD_NUMBER && JOB_NAME im statement           	
@@ -41,12 +37,7 @@ pipeline {
 		    stage('deploy'){
         
         	when{
-        	    expression{  
-        	    
-        	         ${env.GIT_BRANCH} == 'origin/Cf_develop'
-        	    }
-
-        	}
+        
         	steps{
     			cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
 			}
