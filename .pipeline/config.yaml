@@ -1,7 +1,14 @@
-steps:
+ 
+  steps:
   mtaBuild:
     buildTarget: 'CF'
-  cloudFoundryDeploy:
+  steps:
+  steps:
+  tmsUpload:
+    credentialsId: CF_Credential
+    nodeName: DevCD
+    mtaPath: /var/jenkins_home/workspace/ContinousDelivery_Develop@2/ci_test_project.mtar
+      cloudFoundryDeploy:
     cloudFoundry:
       credentialsId: 'CF_Credential'
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
