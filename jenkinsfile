@@ -37,16 +37,9 @@ pipeline {
 		}	
 		stage('Attach'){
 		     steps{
-             	script{
-             	    env.TransportID = commonPipelineEnvironment.getTransportRequestId()
-                }
-              
-                	transportRequestUploadFile script: this, transportRequestId: 'env.TransportID'        	
-                	
-				}
-				steps{
-				    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
-				}
+		     		tmsUpload
+		     	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
+				
         	}
     	}
    } 	
