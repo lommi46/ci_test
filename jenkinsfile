@@ -37,8 +37,7 @@ pipeline {
 		}	
 		stage('Release'){
 		     steps{
-		      	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
-				
+		      	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true				
         	}
     	}
    }
