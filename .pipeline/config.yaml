@@ -4,8 +4,8 @@
     buildTarget: 'CF'
   steps:
   tmsUpload:
-    credentialsId: CF_Credential
-    nodeName: DevCD
+    credentialsId: TMS_Credential
+    nodeName: ProdCD
     mtaPath: /var/jenkins_home/workspace/ContinousDelivery_Develop@2/ci_test_project.mtar
   steps:     
     cloudFoundryDeploy:
