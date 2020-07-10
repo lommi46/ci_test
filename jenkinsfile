@@ -39,17 +39,12 @@ pipeline {
 			}
 		}	
 		stage('Attach'){
-					steps{   
-					}
-
-                	steps{
-                		script{
-                			env.TransportID = commonPipelineEnvironment.getTransportRequestId()
-                	    }
-                	}
-
-                	transportRequestUploadFile script: this, transportRequestId: 'env.TransportID'
-                	
+		     steps{
+             	script{
+               			env.TransportID = commonPipelineEnvironment.getTransportRequestId()
+                }
+              }
+                	transportRequestUploadFile script: this, transportRequestId: 'env.TransportID'        	
                 	//cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true
 				}
         	}
