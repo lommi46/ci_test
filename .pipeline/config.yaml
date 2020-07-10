@@ -14,6 +14,6 @@
       apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
       org: 'd074337trial'
       space: 'dev'
-stages:
-  Release:
-    tmsUpload: true
+  stages:
+    Release:
+      tmsUpload: true
