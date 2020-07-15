@@ -15,10 +15,7 @@ pipeline {
                  }
               } 
          stage('build') {
-         	when{
-         	    expression {env.GIT_BRANCH == "origin/master"}
-         	}
-            steps {
+         	steps {
             	echo "${env.GIT_BRANCH}"          
                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
             }
@@ -28,19 +25,16 @@ pipeline {
         	when{
          	    expression {
          	        env.GIT_BRANCH != "origin/develop"
-         	  }  	
+         	  } 
+         	 } 	
         	steps{           	        	
         	    nexusPublisher nexusInstanceId: 'localnexus', nexusRepositoryId: 'maven-releases', packages: [[$class: 'MavenPackage', mavenAssetList: [[classifier: '', extension: '', filePath: '/var/jenkins_home/workspace/'+ env.JOB_NAME +'/ci_test_project.mtar']], mavenCoordinate: [artifactId: 'jenkins-mtar', groupId: 'org.jenkins-CF.main', packaging: '.mtar', version: '1.' + env.BUILD_NUMBER]]]
         		}        		
-		}	
+			}
 		stage('Deploy on Dev'){
-			when{
-         	    expression {
-         	        env.GIT_BRANCH != "origin/develop"
-         	    	}
 		     steps{
 		      	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true				
-        	}
-    	}
-   }
-  }  	
+        		}
+    		}
+  		 }
+  	}  	
