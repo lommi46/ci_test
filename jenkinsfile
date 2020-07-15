@@ -24,7 +24,7 @@ pipeline {
         stage('Nexus deploy'){
         	when{
          	    expression {
-         	        env.GIT_BRANCH != "origin/develop"
+         	        env.GIT_BRANCH == "origin/develop"
          	  } 
          	 } 	
         	steps{           	        	
