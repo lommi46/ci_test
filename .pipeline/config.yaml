@@ -1,17 +1,17 @@
   steps:
-  mtaBuild:
-    buildTarget: 'CF'
+    mtaBuild:
+      buildTarget: 'CF'
   steps:     
     cloudFoundryDeploy:
-    cloudFoundry:
-      credentialsId: 'CF_Credential'
-      apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
-      org: '493860b0-61ff-4572-9c8d-c57aa214274d'
-      space: 'dev'
+      cloudFoundry:
+        credentialsId: 'CF_Credential'
+        apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
+        org: '493860b0-61ff-4572-9c8d-c57aa214274d'
+        space: 'dev'
   steps:
     tmsUpload:
       credentialsId: TMS_Credential
-      nodeName: DevCD
+      nodeName: ProdCD
       mtaPath: /var/jenkins_home/workspace/livery_transport-service-develop/ci_test_project.mtar   
   stages:
     Release:
