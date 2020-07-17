@@ -33,7 +33,7 @@ pipeline {
 			}
 		stage('Deploy on Dev'){
 		     steps{
-		      	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true			
+		      	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true		
         		}
     		}
   		 }
