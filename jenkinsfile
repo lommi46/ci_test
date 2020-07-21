@@ -37,8 +37,9 @@ pipeline {
         		}
     		}
     	stage('Release'){
-    	    echo("Stage: Release")
-
+    	   steps{
+    	    	echo("Stage: Release")
+				}
     	}
 	
   		 }
