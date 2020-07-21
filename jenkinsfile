@@ -39,7 +39,7 @@ pipeline {
     	stage('Release'){
     	   steps{
     	    	echo("Stage: Release")
-    	    	tmsUpload script:this, verbose: true, nodeName: DevCD
+    	    	tmsUpload script:this, verbose: true
 				}
     	}
 	
