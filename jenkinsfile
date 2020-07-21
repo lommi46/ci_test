@@ -36,5 +36,10 @@ pipeline {
 		      	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true		
         		}
     		}
+    	stage('Release'){
+    	    System.Out.println("Stage: Release")
+
+    	}
+	
   		 }
 	}  
