@@ -4,7 +4,7 @@
   steps:
     tmsUpload:
       credentialsId: TMS_Credential
-      nodeName: ProdCD
+      nodeName: DevCD
       mtaPath: /var/jenkins_home/workspace/livery_transport-service-develop/ci_test_project.mtar
   steps:     
     cloudFoundryDeploy:
@@ -13,7 +13,6 @@
         apiEndpoint: 'https://api.cf.eu10.hana.ondemand.com'
         org: 'd074337trial'
         space: 'dev'
-     
-  stages:
+   stages:
     Release:
       tmsUpload: true
