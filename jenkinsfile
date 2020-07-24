@@ -40,8 +40,7 @@ pipeline {
     	   steps{
     	    	echo("Stage: Release")
     	    	tmsUpload script:this, verbose: true
-				}
-    	}
-	
-  		 }
-	}  
+			}
+		}
+	}	
+}  
