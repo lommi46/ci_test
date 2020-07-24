@@ -32,6 +32,11 @@ pipeline {
         		}        		
 			}
 		stage('Deploy on Dev'){
+		when{
+         	    expression {
+         	        env.GIT_BRANCH == "origin/develop"
+         	  } 
+         	 }
 		     steps{
 		      	    cloudFoundryDeploy script:this, deployTool:'mtaDeployPlugin', verbose: true		
         		}
@@ -39,7 +44,7 @@ pipeline {
     	stage('Release'){
     	   steps{
     	    	echo("Stage: Release")
-    	    	tmsUpload script:this, verbose: true
+    	    	tmsUpload script:this, verbose: true, nodeName: 'Develop'
 			}
 		}	
 	}	
