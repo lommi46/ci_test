@@ -3,9 +3,9 @@
       buildTarget: 'CF'
   steps:
     tmsUpload:
-      credentialsId: TMS_Credential
-      nodeName: Develop
-      mtaPath: /var/jenkins_home/workspace/livery_transport-service-develop/ci_test_project.mtar
+      credentialsId: 'TMS_Credential'
+      nodeName: 'Develop'
+      mtaPath: '/var/jenkins_home/workspace/livery_transport-service-develop/ci_test_project.mtar'
   steps:     
     cloudFoundryDeploy:
       cloudFoundry:
