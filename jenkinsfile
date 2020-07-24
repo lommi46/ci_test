@@ -41,18 +41,6 @@ pipeline {
     	    	echo("Stage: Release")
     	    	tmsUpload script:this, nodeName: Develop,  verbose: true
 			}
-		}
-		stage ('Git merge'){
-			when{
-         	    expression {
-         	        env.GIT_BRANCH == "origin/develop"
-         	  }
-         	  	} 
-		    steps{
-		      	sh 'git merge env.GIT_BRANCH'
-				sh 'git commit -am "Merged" + env.GIT_BRANCH +"branch to master'
-				sh "git Push Origin CF_develop"
-		 	 	}      
-		} 		
+		}	
 	}	
 }  
