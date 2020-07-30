@@ -32,7 +32,7 @@ pipeline {
         		}        		
 			}
 		stage('Deploy on Dev'){
-		when{
+			when{
          	    expression {
          	        env.GIT_BRANCH == "origin/develop"
          	  } 
