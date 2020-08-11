@@ -16,7 +16,7 @@ pipeline {
               }
          stage('check'){
     		steps{
-    		    sonarExecuteScan script: this, verbose: true, sonarTokenCredentialsId: Sonarqube, githubTokenCredentialsId: GitHub	 	
+    		    sonarExecuteScan script: this, verbose: true, sonarTokenCredentialsId: credentials('Sonarqube'), githubTokenCredentialsId: credentials('GitHub')	 	
     			}
 			} 
 		
