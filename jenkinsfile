@@ -13,7 +13,13 @@ pipeline {
 					env.BRANCH_NAME = "${env.GIT_BRANCH}"			                    
 				    }
                  }
-              } 
+              }
+         stage('check'){
+    		steps{
+    		    sonarExecuteScan script: this, verbose: true, sonarTokenCredentialsId: Sonarqube, githubTokenCredentialsId: GitHub	 	
+    			}
+			} 
+		
          stage('build') {
          	steps {
             	echo "${env.GIT_BRANCH}"          
