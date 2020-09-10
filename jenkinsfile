@@ -1,4 +1,4 @@
-@Library(['piper-lib', 'piper-lib-os']) _
+@Library('piper-lib-os') _
 
 
 pipeline {
@@ -8,16 +8,15 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
-                setupPipelineEnvironment script: this
+                setupCommonPipelineEnvironment script: this
                 script {
 					env.BRANCH_NAME = "${env.GIT_BRANCH}"			                    
 				    }
                  }
               }
          stage('check'){
-    		steps{
-    		
-    		    sonarExecuteScan script: this, verbose: true, sonarTokenCredentialsId: 'SonatTokenSAP'	 	
+    		steps{   		
+    		    sonarExecuteScan script: this, verbose: true, sonarTokenCredentialsId: 'SonarToken', githubTokenCredentialsId: 'Github_token' 	
     			}
 			} 
 		
