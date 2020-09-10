@@ -18,7 +18,7 @@ pipeline {
     		steps{   	
     				script{
 						git 'https://github.com/lommi46/ci_test.git'
-    					def scannerHome = tool 'SonarScanner 4.0';
+    					def scannerHome = tool 'SonarScanner 2.12';
     					withSonarQubeEnv('SonarCloud') { // If you have configured more than one global server connection, you can specify its name
     					 sh "${scannerHome}/bin/sonar-scanner"}
   								    
