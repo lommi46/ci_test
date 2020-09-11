@@ -13,27 +13,23 @@ pipeline {
 					env.BRANCH_NAME = "${env.GIT_BRANCH}"			                    
 				    }
                  }
-              }
+              }     
+		stage('build') {
+         	steps {
+            	echo "${env.GIT_BRANCH}"          
+               mtaBuild script: this, mtaBuildTool: 'cloudMbt'
+            }
+        }
          stage('check'){
     		steps{   	
     				script{
 						git 'https://github.com/lommi46/ci_test.git'
     					def scannerHome = tool 'SonarScanner';
     					withSonarQubeEnv('SonarCloud') { // If you have configured more than one global server connection, you can specify its name
-    					 sh "${scannerHome}/bin/sonar-scanner"}
-  								    
-
+    					 sh "${scannerHome}/bin/sonar-scanner"}				    
     				}	   					
 			}
-    	} 
-		
-         stage('build') {
-         	steps {
-            	echo "${env.GIT_BRANCH}"          
-               mtaBuild script: this, mtaBuildTool: 'cloudMbt'
-            }
-        }
-    
+    	}    
         stage('Nexus deploy'){
         	when{
          	    expression {
