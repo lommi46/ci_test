@@ -14,7 +14,12 @@ pipeline {
 				    }
                  }
               }     
-		
+		stage('build') {
+         	steps {
+            	echo "${env.GIT_BRANCH}"          
+               mtaBuild script: this, mtaBuildTool: 'cloudMbt'
+            }
+        
          stage('check'){
     		steps{   	
     				script{
@@ -25,12 +30,7 @@ pipeline {
     				}	   					
 			}
     	}
-    	stage('build') {
-         	steps {
-            	echo "${env.GIT_BRANCH}"          
-               mtaBuild script: this, mtaBuildTool: 'cloudMbt'
-            }
-        }    
+    	}    
         stage('Nexus deploy'){
         	when{
          	    expression {
