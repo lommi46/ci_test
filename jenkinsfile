@@ -52,6 +52,11 @@ pipeline {
         		}
     		}
     	stage('Release'){
+    	when{
+         	    expression {
+         	        env.GIT_BRANCH == "origin/develop"
+         	  } 
+         	 }
     	   steps{
     	    	echo("Stage: Release")
     	    	
