@@ -13,14 +13,24 @@ pipeline {
 					env.BRANCH_NAME = "${env.GIT_BRANCH}"			                    
 				    }
                  }
-              } 
-         stage('build') {
+              }     
+		stage('build') {
          	steps {
             	echo "${env.GIT_BRANCH}"          
                mtaBuild script: this, mtaBuildTool: 'cloudMbt'
             }
         }
-    
+         stage('check'){
+    		steps{   	
+    				script{
+						git 'https://github.com/lommi46/ci_test.git'
+    					def scannerHome = tool 'sonarqube';
+    					withSonarQubeEnv('sonarqube') { // If you have configured more than one global server connection, you can specify its name
+    					 sh "${scannerHome}/bin/sonar-scanner"}				    
+    				}	   					
+			}
+    	}
+    	    
         stage('Nexus deploy'){
         	when{
          	    expression {
@@ -42,9 +52,15 @@ pipeline {
         		}
     		}
     	stage('Release'){
+    	when{
+         	    expression {
+         	        env.GIT_BRANCH == "origin/develop"
+         	  } 
+         	 }
     	   steps{
     	    	echo("Stage: Release")
-    	    	tmsUpload script:this, verbose: true, nodeName: 'Develop', credentialsId: 'TMS_Credential', mtaPath: 'ci_test_project.mtar', customDescription: 'Build Nr: '+ env.BUILD_NUMBER    	    
+    	    	
+    	    	tmsUpload script:this, verbose: true, nodeName: 'Develop', credentialsId: 'TMS_Credential', mtaPath: 'ci_test_project.mtar', customDescription: 'Job Name: '+ env.JOB_NAME+' Build Nr: '+ env.BUILD_NUMBER     	    
 			}
 		}	
 	}	
