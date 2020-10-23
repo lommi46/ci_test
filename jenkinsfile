@@ -23,7 +23,7 @@ pipeline {
          stage('check'){
     		steps{   	
     				script{
-						git "https://github.com/lommi46/ci_test.git/tree/${env.GIT_BRANCH}"
+						git "https://github.com/TimHffmnn/SonarTest"
     					def scannerHome = tool 'SonarCloud';
     					withSonarQubeEnv('SonarCloud') { // If you have configured more than one global server connection, you can specify its name
     					 sh "${scannerHome}/bin/sonar-scanner"}				    
